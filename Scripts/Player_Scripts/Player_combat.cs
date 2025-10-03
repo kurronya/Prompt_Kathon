@@ -30,7 +30,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void DealDamage()
     {
-        StatsManager.Instance.damage += 1;
         statsUI.UpdateDamage();
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, StatsManager.Instance.weaponRange, ennemylayer);
 
