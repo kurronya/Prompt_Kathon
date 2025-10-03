@@ -10,7 +10,8 @@ public class Enemy_Combat : MonoBehaviour
     public float weaponRange;
     public float knockbackForce;
     public float stunTime;
-    public LayerMask playerLayer;
+    public LayerMask playerLayer;// Hello
+
 
 
     public void Attack() 
