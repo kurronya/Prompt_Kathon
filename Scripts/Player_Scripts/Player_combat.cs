@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public Transform attackPoint;
+    public Transform attackPoint;//Hi
     public LayerMask ennemylayer;
     public Stats_UI statsUI;
     public Animator anim;

@@ -17,7 +17,7 @@ public class Enemy_Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform player;
-    private Animator anim;
+    private Animator anim; //Haloo
 
     void Start()
     {
