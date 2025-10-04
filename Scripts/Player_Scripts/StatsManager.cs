@@ -7,7 +7,7 @@ public class StatsManager : MonoBehaviour
     public static StatsManager Instance;
 
 
-    [Header("Combat Stats")]
+    [Header("Combat Stats")] //manage stats damge
     public int damage;
     public float weaponRange;
     public float knockbackForce;
