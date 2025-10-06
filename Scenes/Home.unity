@@ -2077,6 +2077,7 @@ GameObject:
   - component: {fileID: 1133124890}
   - component: {fileID: 1133124889}
   - component: {fileID: 1133124888}
+  - component: {fileID: 1133124891}
   m_Layer: 0
   m_Name: Teleport
   m_TagString: Untagged
@@ -2097,7 +2098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenceToLoad: CombatZone
-  fadeAnim: {fileID: 0}
+  fadeAnim: {fileID: 1133124891}
   fadeTime: 1
 --- !u!61 &1133124889
 BoxCollider2D:
@@ -2156,9 +2157,31 @@ Transform:
   m_LocalPosition: {x: 17.2, y: -25.3, z: -0.10522316}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1442325215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1133124891
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133124887}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 492c74a770969284090efecff74553ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1158265388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2207,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158265388}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1158265390
 Camera:
   m_ObjectHideFlags: 0
@@ -2859,7 +2882,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 483942979}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1133124890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4241,5 +4264,4 @@ SceneRoots:
   - {fileID: 1543006178}
   - {fileID: 544143410}
   - {fileID: 1791846545}
-  - {fileID: 1442325215}
   - {fileID: 1571791323}

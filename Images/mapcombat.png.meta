@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 11277a3f23988ec47908362d708edaa8
+guid: 4b2b05c6c77b4444887ec8b92d6d7d35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Close Button_0
+      name: mapcombat_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 92
-        height: 89
+        x: 0
+        y: 0
+        width: 800
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638d6a9c12cfe484ab6d5b7d1f0f76e4
-      internalID: -1512695196
+      spriteID: b94c9e731ed4f2949b4f072e86a512c0
+      internalID: 65497467
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Close Button_0: -1512695196
+      mapcombat_0: 65497467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
