@@ -12,22 +12,20 @@ public class Stats_UI : MonoBehaviour
     private bool statsOpen = false;
 
     [Header("Buttons")]
-    [SerializeField] private Button closeButton; // Nút Close (dấu X)
-    [SerializeField] private Button exitBattleButton; // Nút "THOÁT CHIẾN"
+    [SerializeField] private Button closeButton;
+    [SerializeField] private Button exitBattleButton;
 
     [Header("Scene Settings")]
-    [SerializeField] private string exitSceneName = "MainMenu"; // Tên scene muốn chuyển đến
+    [SerializeField] private string exitSceneName = "MainMenu";
 
     private void Start()
     {
         UpdateAllStats();
 
-        // Gán sự kiện cho các nút
         if (closeButton != null)
         {
             closeButton.onClick.AddListener(CloseStatsUI);
         }
-
         if (exitBattleButton != null)
         {
             exitBattleButton.onClick.AddListener(OnExitBattleClicked);
@@ -49,7 +47,6 @@ public class Stats_UI : MonoBehaviour
         }
     }
 
-    // Hàm mở Stats UI
     private void OpenStatsUI()
     {
         Time.timeScale = 0;
@@ -60,7 +57,6 @@ public class Stats_UI : MonoBehaviour
         statsOpen = true;
     }
 
-    // Hàm đóng Stats UI (cho nút Close)
     private void CloseStatsUI()
     {
         Time.timeScale = 1;
@@ -71,26 +67,20 @@ public class Stats_UI : MonoBehaviour
         statsOpen = false;
     }
 
-    // Hàm thoát chiến (cho nút THOÁT CHIẾN)
     private void OnExitBattleClicked()
     {
-        // Trả lại time scale về bình thường trước khi chuyển scene
         Time.timeScale = 1;
-
-        // Lưu dữ liệu và chuyển scene
         SaveGameData();
         SceneManager.LoadScene(exitSceneName);
     }
 
-    // Lưu dữ liệu (tùy chọn)
     private void SaveGameData()
     {
         // Lưu stats hiện tại
         PlayerPrefs.SetInt("PlayerHealth", StatsManager.Instance.currentHealth);
         PlayerPrefs.SetInt("PlayerDamage", StatsManager.Instance.damage);
-        PlayerPrefs.SetInt("PlayerSpeed", StatsManager.Instance.speed);
+        PlayerPrefs.SetFloat("PlayerSpeed", StatsManager.Instance.speed); // SỬA ĐÂY
         PlayerPrefs.Save();
-
         Debug.Log("Game data saved!");
     }
 
@@ -101,7 +91,7 @@ public class Stats_UI : MonoBehaviour
 
     public void UpdateSpeed()
     {
-        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "TAN CONG: " + StatsManager.Instance.speed;
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "TOC DO: " + StatsManager.Instance.speed; // Sửa text cho đúng
     }
 
     public void UpdateAllStats()
@@ -110,14 +100,12 @@ public class Stats_UI : MonoBehaviour
         UpdateSpeed();
     }
 
-    // Cleanup khi destroy
     private void OnDestroy()
     {
         if (closeButton != null)
         {
             closeButton.onClick.RemoveListener(CloseStatsUI);
         }
-
         if (exitBattleButton != null)
         {
             exitBattleButton.onClick.RemoveListener(OnExitBattleClicked);
