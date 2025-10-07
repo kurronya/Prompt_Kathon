@@ -53,12 +53,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Knockback(Transform enemy, float force, float stunTime)
+    public void Knockback(Transform damageSource, float knockbackForce, float knockbackDuration)
     {
-        isKnockedback = true;
-        Vector2 direction = (transform.position - enemy.position).normalized;
-        rb.velocity = direction * force;
-        StartCoroutine(KnockbackCounter(stunTime));
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
+
+        StartCoroutine(KnockbackRoutine(damageSource, knockbackForce, knockbackDuration));
+    }
+
+    private IEnumerator KnockbackRoutine(Transform damageSource, float knockbackForce, float knockbackDuration)
+    {
+        Vector2 direction = (transform.position - damageSource.position).normalized;
+        rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(knockbackDuration);
     }
 
     IEnumerator KnockbackCounter(float stunTime)

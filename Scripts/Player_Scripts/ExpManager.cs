@@ -1,64 +1,91 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 
-public class ExpManager : MonoBehaviour
+public class ExperienceManager : MonoBehaviour
 {
-    public int level;
-    public int currentExp;
+    public static ExperienceManager Instance;
+    [Header("Level Settings")]
+    public int currentLevel = 1;
+    public int currentExp = 0;
     public int expToNextLevel = 10;
-    public float expMultiplier = 1.2f; //Add 20% more EXP to level each
-    public Slider expSlider;
-    public TMP_Text currentLevelText;
+    public float expMultiplier = 1.5f;
+    [Header("UI References")]
+    public Slider expBar;
+    public UnityEngine.UI.Text levelText;
+    public UnityEngine.UI.Text expText;
 
-
-    private void Start() 
+    void Awake()
     {
-        UpdateUI();
-    }
-
-    private void Update() 
-    {
-        if (Input.GetKeyDown(KeyCode.Return)) 
+        if (Instance == null)
         {
-            GainExperience(2);
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    private void OnEnable() 
+    void Start()
     {
-        Enemy_Health.OnMonsterDefeated += GainExperience;
+        UpdateUI();
+        Enemy_Health.OnMonsterDefeated += AddExperience;
     }
 
-    private void OnDisable()
+    void OnDestroy()
     {
-        Enemy_Health.OnMonsterDefeated -= GainExperience;
+        // BỎ COMMENT dòng này:
+        Enemy_Health.OnMonsterDefeated -= AddExperience;
     }
 
-    public void GainExperience(int amount)
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            AddExperience(10);
+            Debug.Log("Added 10 EXP!");
+        }
+    }
+
+    public void AddExperience(int amount)
     {
         currentExp += amount;
-        if (currentExp >= expToNextLevel)
+        while (currentExp >= expToNextLevel)
         {
             LevelUp();
         }
-
         UpdateUI();
     }
-    
-    private void LevelUp() 
+
+    void LevelUp()
     {
-        level++;
         currentExp -= expToNextLevel;
+        currentLevel++;
         expToNextLevel = Mathf.RoundToInt(expToNextLevel * expMultiplier);
+        Debug.Log("LEVEL UP! Level " + currentLevel);
+        Time.timeScale = 0;
+        if (LevelUpUI.Instance != null)
+        {
+            LevelUpUI.Instance.ShowUpgradeOptions();
+        }
     }
 
-    public void UpdateUI() 
+    void UpdateUI()
     {
-        expSlider.maxValue = expToNextLevel;
-        expSlider.value = currentExp;
-        currentLevelText.text = "Level: " + level;
+        if (expBar != null)
+        {
+            expBar.maxValue = expToNextLevel;
+            expBar.value = currentExp;
+        }
+        if (levelText != null)
+        {
+            levelText.text = "LV " + currentLevel;
+        }
+        if (expText != null)
+        {
+            expText.text = currentExp + " / " + expToNextLevel;
+        }
     }
 }

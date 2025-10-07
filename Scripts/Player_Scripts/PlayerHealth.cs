@@ -1,30 +1,75 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public TMP_Text healthText;
     public Animator healthTextAnim;
 
-
-    private void Start() 
+    private void Start()
     {
-        healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
+        FindHealthUI();
+        UpdateHealthUI();
+
+        // Đăng ký event khi load scene mới
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void ChangeHealth(int amount) 
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindHealthUI();
+        UpdateHealthUI();
+    }
+
+    private void FindHealthUI()
+    {
+        // Tìm lại UI elements trong scene mới
+        if (healthText == null)
+        {
+            GameObject healthObj = GameObject.Find("HealthText"); // Thay tên cho đúng
+            if (healthObj != null)
+            {
+                healthText = healthObj.GetComponent<TMP_Text>();
+                healthTextAnim = healthObj.GetComponent<Animator>();
+            }
+            else
+            {
+                Debug.LogWarning("Không tìm thấy HealthText UI trong scene!");
+            }
+        }
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (healthText != null)
+        {
+            healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
+        }
+    }
+
+    public void ChangeHealth(int amount)
     {
         StatsManager.Instance.currentHealth += amount;
-        healthTextAnim.Play("TextUpdate");
 
-        healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
+        if (healthTextAnim != null)
+        {
+            healthTextAnim.Play("TextUpdate");
+        }
 
-        if (StatsManager.Instance.currentHealth <= 0) 
+        UpdateHealthUI();
+
+        if (StatsManager.Instance.currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
     }
 
+    private void OnDestroy()
+    {
+        // Hủy đăng ký event để tránh memory leak
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }
