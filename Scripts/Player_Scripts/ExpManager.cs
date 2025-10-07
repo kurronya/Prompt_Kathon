@@ -63,12 +63,25 @@ public class ExperienceManager : MonoBehaviour
     {
         currentExp -= expToNextLevel;
         currentLevel++;
+
         expToNextLevel = Mathf.RoundToInt(expToNextLevel * expMultiplier);
+
         Debug.Log("LEVEL UP! Level " + currentLevel);
+
         Time.timeScale = 0;
-        if (LevelUpUI.Instance != null)
+
+        // Hiện quiz thay vì upgrade trực tiếp
+        if (QuizUI.Instance != null)
         {
-            LevelUpUI.Instance.ShowUpgradeOptions();
+            QuizUI.Instance.ShowQuiz();
+        }
+        else
+        {
+            // Fallback nếu không có quiz
+            if (LevelUpUI.Instance != null)
+            {
+                LevelUpUI.Instance.ShowUpgradeOptions();
+            }
         }
     }
 

@@ -20,12 +20,16 @@ public class Stats_UI : MonoBehaviour
 
     private void Start()
     {
+        // ẨN BẢNG TRẠNG THÁI NGAY KHI BẮT ĐẦU
+        CloseStatsUI();
+
         UpdateAllStats();
 
         if (closeButton != null)
         {
             closeButton.onClick.AddListener(CloseStatsUI);
         }
+
         if (exitBattleButton != null)
         {
             exitBattleButton.onClick.AddListener(OnExitBattleClicked);
@@ -60,7 +64,6 @@ public class Stats_UI : MonoBehaviour
     private void CloseStatsUI()
     {
         Time.timeScale = 1;
-        UpdateAllStats();
         statsCanvas.alpha = 0;
         statsCanvas.blocksRaycasts = false;
         statsCanvas.interactable = false;
@@ -79,7 +82,7 @@ public class Stats_UI : MonoBehaviour
         // Lưu stats hiện tại
         PlayerPrefs.SetInt("PlayerHealth", StatsManager.Instance.currentHealth);
         PlayerPrefs.SetInt("PlayerDamage", StatsManager.Instance.damage);
-        PlayerPrefs.SetFloat("PlayerSpeed", StatsManager.Instance.speed); // SỬA ĐÂY
+        PlayerPrefs.SetFloat("PlayerSpeed", StatsManager.Instance.speed);
         PlayerPrefs.Save();
         Debug.Log("Game data saved!");
     }
@@ -91,7 +94,7 @@ public class Stats_UI : MonoBehaviour
 
     public void UpdateSpeed()
     {
-        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "TOC DO: " + StatsManager.Instance.speed; // Sửa text cho đúng
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "TOC DO: " + StatsManager.Instance.speed;
     }
 
     public void UpdateAllStats()
@@ -106,6 +109,7 @@ public class Stats_UI : MonoBehaviour
         {
             closeButton.onClick.RemoveListener(CloseStatsUI);
         }
+
         if (exitBattleButton != null)
         {
             exitBattleButton.onClick.RemoveListener(OnExitBattleClicked);
