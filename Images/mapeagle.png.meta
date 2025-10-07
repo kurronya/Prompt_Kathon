@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b2b05c6c77b4444887ec8b92d6d7d35
+guid: 45564078eb785d04c9e5f750f5023716
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mapcombat_0
+      name: mapeagle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b94c9e731ed4f2949b4f072e86a512c0
-      internalID: 65497467
+      spriteID: 28f0c2d4efec06b49b3556d5bdcd4fc0
+      internalID: 1571497618
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mapcombat_0: 65497467
+      mapeagle_0: 1571497618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
