@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 84
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mokeyrunning-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 99
+        width: 151
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46680ede2cb8a3488adeab03fa8e3bf
+      internalID: -1593847785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mokeyrunning-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 110
+        width: 151
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74145002e656f241b6c5a847638d1e4
+      internalID: 1611915594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mokeyrunning-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 109
+        width: 136
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c45861df8f3a040b52218ddd09b045
+      internalID: -508057172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mokeyrunning-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 95
+        width: 125
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60001d2e73f9cb647bb891f6ce02e623
+      internalID: 174515462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mokeyrunning-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 103
+        width: 135
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2418026ef5696d4fbe060d15f583af7
+      internalID: 1163651707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +224,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mokeyrunning-removebg-preview_0: 227672301
+      mokeyrunning-removebg-preview_1: -1752345384
+      mokeyrunning-removebg-preview_10: 454304026
+      mokeyrunning-removebg-preview_11: -26503886
+      mokeyrunning-removebg-preview_12: -2102084844
+      mokeyrunning-removebg-preview_13: 1211261471
+      mokeyrunning-removebg-preview_14: 1050532819
+      mokeyrunning-removebg-preview_15: -1593847785
+      mokeyrunning-removebg-preview_16: 1611915594
+      mokeyrunning-removebg-preview_17: -508057172
+      mokeyrunning-removebg-preview_18: 174515462
+      mokeyrunning-removebg-preview_19: 1163651707
+      mokeyrunning-removebg-preview_2: -1858256306
+      mokeyrunning-removebg-preview_20: -538252561
+      mokeyrunning-removebg-preview_21: -929569873
+      mokeyrunning-removebg-preview_3: -109958668
+      mokeyrunning-removebg-preview_4: 1563837556
+      mokeyrunning-removebg-preview_5: -666449987
+      mokeyrunning-removebg-preview_6: 675389778
+      mokeyrunning-removebg-preview_7: -1352444291
+      mokeyrunning-removebg-preview_8: 1641603066
+      mokeyrunning-removebg-preview_9: 1840022168
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

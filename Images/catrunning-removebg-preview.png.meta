@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 349
+        width: 168
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a7726996a78e54a885a30f95b796a0
+      internalID: -1320452143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 356
+        width: 144
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87375a866865ad64481ba5f01cff29cc
+      internalID: -834696869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 358
+        width: 158
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c75cb4a48c532c4aa06e000918afb81
+      internalID: 98732278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 180
+        width: 162
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f9720d31a6b324f904a53a49a1e9b0
+      internalID: 869904852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 185
+        width: 143
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92d4170dced2a04c8eef9ae3117a3d2
+      internalID: -1688351299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 179
+        width: 155
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c341f0f7478f59e408c9616c4ba6334e
+      internalID: 1182996492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 18
+        width: 163
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2ed4a61e436bc43853c13fd2e828e2
+      internalID: 238528728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 14
+        width: 143
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ecfb7c75358744c853541757d2cb88
+      internalID: -133066443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrunning-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 19
+        width: 150
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5809edbda62e96244bd3300bea56858e
+      internalID: 1008477553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +308,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      catrunning-removebg-preview_0: -1320452143
+      catrunning-removebg-preview_1: -1279409966
+      catrunning-removebg-preview_10: 1008477553
+      catrunning-removebg-preview_2: -1804378420
+      catrunning-removebg-preview_3: -834696869
+      catrunning-removebg-preview_4: 98732278
+      catrunning-removebg-preview_5: 869904852
+      catrunning-removebg-preview_6: -1688351299
+      catrunning-removebg-preview_7: 1182996492
+      catrunning-removebg-preview_8: 238528728
+      catrunning-removebg-preview_9: -133066443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

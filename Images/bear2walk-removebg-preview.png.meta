@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 381
+        width: 130
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ccf8a75673d01428b6a9c354dd8a98
+      internalID: -927573851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 382
+        width: 131
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a895ba133384cc14385d98c30148b326
+      internalID: -1121097098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 382
+        width: 130
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec92c6500fbfd5f47b37be6a89619fdd
+      internalID: 1612455485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 257
+        width: 132
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed83a3ae040a543409c65d6728ed0db9
+      internalID: -1014081596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 257
+        width: 131
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bf2ba58ad43584eb22f888ca1cf6b5
+      internalID: 353246672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 132
+        width: 132
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8024f326332b61d4982a8b05464e52e8
+      internalID: 1027103738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 135
+        width: 132
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e99de5869e018408261fde5a0ce254
+      internalID: -1831338938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 4
+        width: 128
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde8c3817fdfc9f4689006524c239e7e
+      internalID: 492088321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 5
+        width: 135
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b0be42e022d8ea4caf5eaed0c851d9b
+      internalID: -2136167220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bear2walk-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 5
+        width: 135
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e23b693f60bb742bc645039fa4602c
+      internalID: -1865612002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +329,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bear2walk-removebg-preview_0: -927573851
+      bear2walk-removebg-preview_1: -1121097098
+      bear2walk-removebg-preview_10: -2136167220
+      bear2walk-removebg-preview_11: -1865612002
+      bear2walk-removebg-preview_2: 1612455485
+      bear2walk-removebg-preview_3: -1014081596
+      bear2walk-removebg-preview_4: 353246672
+      bear2walk-removebg-preview_5: -519883992
+      bear2walk-removebg-preview_6: 1027103738
+      bear2walk-removebg-preview_7: 1715242456
+      bear2walk-removebg-preview_8: -1831338938
+      bear2walk-removebg-preview_9: 492088321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
