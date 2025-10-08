@@ -21,9 +21,18 @@ public class GameManager : MonoBehaviour
     public UnityEngine.UI.Text killCounterText;
 
     [Header("Game Stats")]
-    public int killsToWin = 1;
+    public int killsToWin = 50;
     private int currentKills = 0;
     private bool gameEnded = false;
+
+    [Header("Revive Settings")]
+    public Button reviveButton;
+    public bool canRevive = true;
+    private bool hasRevived = false;
+    public Transform spawnPoint;
+
+    // ✅ THÊM REFERENCE TỚI PLAYER (quan trọng!)
+    private GameObject playerReference;
 
     private List<VictoryQuote> victoryQuotes = new List<VictoryQuote>();
 
@@ -43,6 +52,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // ✅ LƯU REFERENCE TỚI PLAYER NGAY TỪ ĐẦU
+        playerReference = GameObject.FindGameObjectWithTag("Player");
+        if (playerReference == null)
+        {
+            Debug.LogError("❌ KHÔNG TÌM THẤY PLAYER trong scene!");
+        }
+
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -54,14 +70,16 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateKillCounterUI();
-
-        // ✅ SUBSCRIBE TO ENEMY DEATH EVENT
         Enemy_Health.OnMonsterDefeated += OnEnemyKilledEvent;
+
+        if (reviveButton != null)
+        {
+            reviveButton.onClick.AddListener(OnReviveButtonClicked);
+        }
     }
 
     void OnDestroy()
     {
-        // ✅ UNSUBSCRIBE TO PREVENT MEMORY LEAK
         Enemy_Health.OnMonsterDefeated -= OnEnemyKilledEvent;
     }
 
@@ -116,10 +134,8 @@ public class GameManager : MonoBehaviour
         });
     }
 
-    // ✅ HÀM MỚI - Nhận event từ Enemy_Health
     private void OnEnemyKilledEvent(int expAmount)
     {
-        // Event trả về expAmount nhưng ta không cần dùng
         OnEnemyKilled();
     }
 
@@ -163,7 +179,154 @@ public class GameManager : MonoBehaviour
             gameOverText.text = "GAME OVER\n\nKills: " + currentKills + "/" + killsToWin;
         }
 
+        if (reviveButton != null)
+        {
+            if (canRevive && !hasRevived)
+            {
+                reviveButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                reviveButton.gameObject.SetActive(false);
+            }
+        }
+
         Debug.Log("Game Over!");
+    }
+
+    void OnReviveButtonClicked()
+    {
+        if (!canRevive || hasRevived) return;
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        if (AdManager.Instance != null)
+        {
+            AdManager.Instance.PlayReviveAd(OnReviveAdComplete);
+        }
+        else
+        {
+            Debug.LogError("AdManager not found!");
+        }
+    }
+
+    void OnReviveAdComplete()
+    {
+        Debug.Log("Ad complete! Reviving player...");
+
+        hasRevived = true;
+        gameEnded = false;
+
+        RevivePlayer();
+        Time.timeScale = 1;
+    }
+
+    // ✅ PHIÊN BẢN MỚI - SỬ DỤNG REFERENCE ĐÃ LƯU
+    void RevivePlayer()
+    {
+        Debug.Log("=== BẮT ĐẦU HỒI SINH ===");
+
+        // ✅ SỬ DỤNG REFERENCE ĐÃ LƯU THAY VÌ TÌM LẠI
+        if (playerReference == null)
+        {
+            Debug.LogError("❌ PLAYER REFERENCE NULL! Thử tìm lại...");
+            // Fallback: tìm trong tất cả objects (kể cả inactive)
+            playerReference = FindInactiveObjectByTag("Player");
+        }
+
+        if (playerReference == null)
+        {
+            Debug.LogError("❌ VẪN KHÔNG TÌM THẤY PLAYER!");
+            return;
+        }
+
+        Debug.Log("✅ Tìm thấy player: " + playerReference.name);
+
+        // 1. BẬT LẠI PLAYER
+        playerReference.SetActive(true);
+        Debug.Log("✅ Player đã bật: " + playerReference.activeSelf);
+
+        // 2. ĐẶT LẠI VỊ TRÍ
+        if (spawnPoint != null)
+        {
+            playerReference.transform.position = spawnPoint.position;
+            Debug.Log("✅ Spawn tại: " + spawnPoint.position);
+        }
+        else
+        {
+            playerReference.transform.position = new Vector3(0, 0, 0);
+            Debug.LogWarning("⚠️ Không có SpawnPoint, spawn tại (0,0,0)");
+        }
+
+        // 3. RESET RIGIDBODY
+        Rigidbody2D rb = playerReference.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            Debug.Log("✅ Reset Rigidbody");
+        }
+
+        // 4. BẬT LẠI COLLIDER
+        Collider2D col = playerReference.GetComponent<Collider2D>();
+        if (col != null)
+        {
+            col.enabled = true;
+            Debug.Log("✅ Bật Collider");
+        }
+
+        // 5. BẬT LẠI SPRITE RENDERER
+        SpriteRenderer sprite = playerReference.GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            sprite.enabled = true;
+            Color color = sprite.color;
+            color.a = 1f;
+            sprite.color = color;
+            Debug.Log("✅ Bật SpriteRenderer");
+        }
+
+        // 6. HỒI ĐẦY MÁU
+        if (StatsManager.Instance != null)
+        {
+            StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;
+            Debug.Log("✅ Hồi máu: " + StatsManager.Instance.maxHealth);
+        }
+
+        // 7. UPDATE HEALTH UI
+        PlayerHealth playerHealth = playerReference.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.ChangeHealth(0);
+            Debug.Log("✅ Cập nhật UI máu");
+        }
+
+        // 8. BẬT LẠI TẤT CẢ SCRIPTS
+        MonoBehaviour[] scripts = playerReference.GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour script in scripts)
+        {
+            script.enabled = true;
+        }
+        Debug.Log("✅ Bật lại tất cả scripts");
+
+        Debug.Log("=== HỒI SINH THÀNH CÔNG ===");
+    }
+
+    // ✅ HÀM TÌM OBJECT INACTIVE
+    GameObject FindInactiveObjectByTag(string tag)
+    {
+        Transform[] allTransforms = Resources.FindObjectsOfTypeAll<Transform>();
+        foreach (Transform t in allTransforms)
+        {
+            if (t.CompareTag(tag) && t.hideFlags == HideFlags.None)
+            {
+                return t.gameObject;
+            }
+        }
+        return null;
     }
 
     public void Victory()

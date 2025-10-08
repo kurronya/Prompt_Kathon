@@ -12,22 +12,31 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         FindHealthUI();
-        ResetHealth(); // THÊM DÒNG NÀY - Reset máu khi start
+        ResetHealth();
         UpdateHealthUI();
-        // Đăng ký event khi load scene mới
+
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnEnable()
+    {
+        if (StatsManager.Instance != null)
+        {
+            FindHealthUI();
+            UpdateHealthUI();
+            Debug.Log("✅ Player OnEnable - UI đã cập nhật!");
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         FindHealthUI();
-        ResetHealth(); // THÊM DÒNG NÀY - Reset máu khi load scene mới
+        ResetHealth();
         UpdateHealthUI();
     }
 
     private void FindHealthUI()
     {
-        // Tìm lại UI elements trong scene mới
         if (healthText == null)
         {
             GameObject healthObj = GameObject.Find("HealthText");
@@ -51,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // HÀM MỚI - Reset máu về giá trị tối đa
     public void ResetHealth()
     {
         if (StatsManager.Instance != null)
@@ -71,28 +79,28 @@ public class PlayerHealth : MonoBehaviour
 
         StatsManager.Instance.currentHealth += amount;
 
-        // Update UI
         if (healthTextAnim != null)
         {
             healthTextAnim.Play("TextUpdate");
         }
+
         UpdateHealthUI();
 
-        // Kiểm tra chết
         if (StatsManager.Instance.currentHealth <= 0)
         {
-            // Trigger Game Over
+            Debug.Log("❌ Player died!");
+
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.GameOver();
             }
+
             gameObject.SetActive(false);
         }
     }
 
     private void OnDestroy()
     {
-        // Hủy đăng ký event để tránh memory leak
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

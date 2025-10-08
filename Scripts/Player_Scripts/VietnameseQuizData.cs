@@ -33,109 +33,109 @@ public class VietnameseQuizData : MonoBehaviour
 
     void InitializeQuestions()
     {
-        // Lịch sử cơ bản
+        // Lich su co ban
         allQuestions.Add(new QuizQuestion
         {
-            question = "Vị vua nào lập ra nhà Lý?",
-            answers = new string[] { "Lý Công Uẩn", "Lý Thái Tổ", "Lý Thánh Tông", "Lý Nhân Tông" },
+            question = "Vi vua nao lap ra nha Ly?",
+            answers = new string[] { "Ly Cong Uan", "Ly Thai To", "Ly Thanh Tong", "Ly Nhan Tong" },
             correctAnswerIndex = 1
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Thành phố nào là thủ đô của Việt Nam?",
-            answers = new string[] { "Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Huế" },
+            question = "Thanh pho nao la thu do cua Viet Nam?",
+            answers = new string[] { "Ha Noi", "TP. Ho Chi Minh", "Da Nang", "Hue" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Chiến thắng nào đánh dấu sự sụp đổ của thực dân Pháp ở Việt Nam?",
-            answers = new string[] { "Điện Biên Phủ", "Bạch Đằng", "Chi Lăng", "Đống Đa" },
+            question = "Chien thang nao danh dau su sup do cua thuc dan Phap o Viet Nam?",
+            answers = new string[] { "Dien Bien Phu", "Bach Dang", "Chi Lang", "Dong Da" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Ngày Quốc khánh (ngày độc lập) của Việt Nam là ngày nào?",
+            question = "Ngay Quoc khanh (ngay doc lap) cua Viet Nam la ngay nao?",
             answers = new string[] { "2/9/1945", "30/4/1975", "1/1/1954", "19/8/1945" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Ai là anh hùng dân tộc lãnh đạo kháng chiến chống quân Nguyên Mông?",
-            answers = new string[] { "Trần Hưng Đạo", "Ngô Quyền", "Lê Lợi", "Quang Trung" },
+            question = "Ai la anh hung dan toc lanh dao khang chien chong quan Nguyen Mong?",
+            answers = new string[] { "Tran Hung Dao", "Ngo Quyen", "Le Loi", "Quang Trung" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Chiến thắng Bạch Đằng năm 938 do ai chỉ huy?",
-            answers = new string[] { "Ngô Quyền", "Trần Hưng Đạo", "Lê Lợi", "Lý Thường Kiệt" },
+            question = "Chien thang Bach Dang nam 938 do ai chi huy?",
+            answers = new string[] { "Ngo Quyen", "Tran Hung Dao", "Le Loi", "Ly Thuong Kiet" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Tên gọi cũ của Việt Nam là gì?",
-            answers = new string[] { "An Nam", "Đại Việt", "Giao Chỉ", "Cả ba đáp án trên" },
+            question = "Ten goi cu cua Viet Nam la gi?",
+            answers = new string[] { "An Nam", "Dai Viet", "Giao Chi", "Ca ba dap an tren" },
             correctAnswerIndex = 3
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Vị vua nào lập ra nhà Trần?",
-            answers = new string[] { "Trần Thái Tông", "Trần Nhân Tông", "Trần Hưng Đạo", "Trần Thánh Tông" },
+            question = "Vi vua nao lap ra nha Tran?",
+            answers = new string[] { "Tran Thai Tong", "Tran Nhan Tong", "Tran Hung Dao", "Tran Thanh Tong" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Cuộc khởi nghĩa Lam Sơn do ai lãnh đạo?",
-            answers = new string[] { "Lê Lợi", "Nguyễn Trãi", "Lê Lai", "Lê Thái Tổ" },
+            question = "Cuoc khoi nghia Lam Son do ai lanh dao?",
+            answers = new string[] { "Le Loi", "Nguyen Trai", "Le Lai", "Le Thai To" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Ngôi chùa nào nổi tiếng ở Ninh Bình?",
-            answers = new string[] { "Chùa Bái Đính", "Chùa Hương", "Chùa Một Cột", "Chùa Thiên Mụ" },
+            question = "Ngoi chua nao noi tieng o Ninh Binh?",
+            answers = new string[] { "Chua Bai Dinh", "Chua Huong", "Chua Mot Cot", "Chua Thien Mu" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Món ăn truyền thống của Việt Nam là gì?",
-            answers = new string[] { "Phở", "Bánh mì", "Bún chả", "Tất cả đều đúng" },
+            question = "Mon an truyen thong cua Viet Nam la gi?",
+            answers = new string[] { "Pho", "Banh mi", "Bun cha", "Tat ca deu dung" },
             correctAnswerIndex = 3
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Áo dài là trang phục truyền thống của nước nào?",
-            answers = new string[] { "Việt Nam", "Trung Quốc", "Nhật Bản", "Hàn Quốc" },
+            question = "Ao dai la trang phuc truyen thong cua nuoc nao?",
+            answers = new string[] { "Viet Nam", "Trung Quoc", "Nhat Ban", "Han Quoc" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Tên thật của Chủ tịch Hồ Chí Minh là gì?",
-            answers = new string[] { "Nguyễn Ái Quốc", "Nguyễn Sinh Cung", "Hồ Chí Minh", "Tất cả đều đúng" },
+            question = "Ten that cua Chu tich Ho Chi Minh la gi?",
+            answers = new string[] { "Nguyen Ai Quoc", "Nguyen Sinh Cung", "Ho Chi Minh", "Tat ca deu dung" },
             correctAnswerIndex = 3
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Vịnh Hạ Long thuộc tỉnh nào?",
-            answers = new string[] { "Quảng Ninh", "Hải Phòng", "Ninh Bình", "Thanh Hóa" },
+            question = "Vinh Ha Long thuoc tinh nao?",
+            answers = new string[] { "Quang Ninh", "Hai Phong", "Ninh Binh", "Thanh Hoa" },
             correctAnswerIndex = 0
         });
 
         allQuestions.Add(new QuizQuestion
         {
-            question = "Tết Nguyên Đán là tết gì?",
-            answers = new string[] { "Tết Cổ truyền", "Tết Trung Thu", "Tết Đoan Ngọ", "Tết Hàn Thực" },
+            question = "Tet Nguyen Dan la tet gi?",
+            answers = new string[] { "Tet Co truyen", "Tet Trung Thu", "Tet Doan Ngo", "Tet Han Thuc" },
             correctAnswerIndex = 0
         });
     }
